@@ -31,21 +31,21 @@ public class SplashActivity extends AppCompatActivity {
         });
 //
 //        // Ensure Firebase is initialized
-//        try {
-//            if (!FirebaseApp.getApps(this).isEmpty()) {
-//                // Initialize Firebase Auth
-//                auth = FirebaseAuth.getInstance();
-//                Log.d(TAG, "Firebase Auth initialized successfully");
-//            } else {
-//                Log.e(TAG, "Firebase not initialized. Starting login activity.");
-//                startLoginActivity();
-//                return;
-//            }
-//        } catch (Exception e) {
-//            Log.e(TAG, "Error accessing Firebase", e);
-//            startLoginActivity();
-//            return;
-//        }
+        try {
+            if (!FirebaseApp.getApps(this).isEmpty()) {
+                // Initialize Firebase Auth
+                auth = FirebaseAuth.getInstance();
+                Log.d(TAG, "Firebase Auth initialized successfully");
+            } else {
+                Log.e(TAG, "Firebase not initialized. Starting login activity.");
+                startLoginActivity();
+                return;
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Error accessing Firebase", e);
+            startLoginActivity();
+            return;
+        }
 //
          new Handler().postDelayed(() -> {
              Intent intent = new Intent(SplashActivity.this, MainActivity.class);
